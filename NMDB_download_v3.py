@@ -78,6 +78,20 @@ data_NAIN = nmdb_get(ti_nmdb, tf_nmdb, "NAIN")     # R = 0.30 GV - STATION 3
 data_FSMT = nmdb_get(ti_nmdb, tf_nmdb, "FSMT")     # R = 0.30 GV - STATION 4
 data_OULU = nmdb_get(ti_nmdb, tf_nmdb, "OULU")     # R = 0.81 GV - STATION 5
 
+dataMCMU = list(data_MCMU.items())
+dataTHUL = list(data_THUL.items())
+dataINVK = list(data_INVK.items())
+dataNAIN = list(data_NAIN.items())
+dataFSMT = list(data_FSMT.items())
+dataOULU = list(data_OULU.items())
+
+data_array_MCMU = np.array(dataMCMU)
+data_array_THUL = np.array(dataTHUL)
+data_array_INVK = np.array(dataINVK)
+data_array_NAIN = np.array(dataNAIN)
+data_array_FSMT = np.array(dataFSMT)
+data_array_OULU = np.array(dataOULU)
+
 # List of NMs and corresponding data arrays
 stations = {
     'MCMU': data_array_MCMU,
