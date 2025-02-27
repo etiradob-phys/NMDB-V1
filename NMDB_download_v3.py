@@ -175,15 +175,22 @@ dataset_nm_resample_txt = dataset_nm_resample
 dataset_nm_resample_txt = dataset_nm_resample.reset_index()
 
 dataset_nm_resample_txt['Year'] = dataset_nm_resample_txt['Datetime'].dt.year
-
+dataset_nm_resample_txt['Month'] = dataset_nm_resample_txt['Datetime'].dt.month
+dataset_nm_resample_txt['Day'] = dataset_nm_resample_txt['Datetime'].dt.day
+dataset_nm_resample_txt['Hour'] = dataset_nm_resample_txt['Datetime'].dt.hour
+dataset_nm_resample_txt['Minute'] = dataset_nm_resample_txt['Datetime'].dt.minute
+dataset_nm_resample_txt['Second'] = dataset_nm_resample_txt['Datetime'].dt.second
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 
 dataset_nm_txt = dataset_nm_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
 dataset_nm_txt.set_index('Datetime', inplace=True)
-print(dataset_nm_txt)
+
+dataset_nm_resample_txt = dataset_nm_resample_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
+dataset_nm_resample_txt.set_index('Datetime', inplace=True)
 
 dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008_resample.txt', header=True, index=None, sep='\t', mode='w')
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
