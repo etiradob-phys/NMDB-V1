@@ -73,6 +73,9 @@ day_tf = input("Enter the final day: ")
 ti_nmdb = f"{year_ti}-{month_ti}-{day_ti}"
 tf_nmdb = f"{year_tf}-{month_tf}-{day_tf}"
 
+ti = f"{year_ti}{month_ti}{day_ti}"
+tf = f"{year_tf}{month_tf}{day_tf}"
+
 # --------------------------------------------------------------------------------------------------------------------------------------
 
 data_MCMU = nmdb_get(ti_nmdb, tf_nmdb, "MCMU")     # R = 0.30 GV - STATION 0
@@ -196,8 +199,8 @@ dataset_nm_txt.set_index('Datetime', inplace=True)
 dataset_nm_resample_txt = dataset_nm_resample_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
 dataset_nm_resample_txt.set_index('Datetime', inplace=True)
 
-dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/{ti_nmdb}_{tf_nmdb}.txt', header=True, index=None, sep='\t', mode='w')
-dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008_resample.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/{ti}to{tf}.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/{ti}to{tf}_resample.txt', header=True, index=None, sep='\t', mode='w')
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
