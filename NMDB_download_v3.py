@@ -120,8 +120,23 @@ for name, data in stations.items():
 dataset_nm = pd.concat(dfs.values(), axis=1)
 
 print(dataset_nm)
+print('---------------------------------------------------------------')
 
 # Extract various components of Datetime:
+
+dataset_nm_txt = dataset_nm
+dataset_nm_txt = dataset_nm.reset_index()
+
+dataset_nm_txt['Year'] = dataset_nm_txt['Datetime'].dt.year
+dataset_nm_txt['Month'] = dataset_nm_txt['Datetime'].dt.month
+dataset_nm_txt['Day'] = dataset_nm_txt['Datetime'].dt.day
+dataset_nm_txt['Hour'] = dataset_nm_txt['Datetime'].dt.hour
+dataset_nm_txt['Minute'] = dataset_nm_txt['Datetime'].dt.minute
+dataset_nm_txt['Second'] = dataset_nm_txt['Datetime'].dt.second
+
+dataset_nm_txt = dataset_nm_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
+dataset_nm_txt.set_index('Datetime', inplace=True)
+print(dataset_nm_txt)
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
