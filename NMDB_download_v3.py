@@ -119,6 +119,7 @@ dataset_nm = pd.concat(dfs.values(), axis=1)
 print(dataset_nm)
 print('---------------------------------------------------------------')
 
+dataset_nm_resample = dataset_nm.resample('60min').mean()
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 import matplotlib.pyplot as plt
@@ -131,6 +132,7 @@ fig, b = plt.subplots(6, 1, sharex=True, figsize=(10,8), tight_layout=False)
 fig.suptitle('Neutron Monitor Data', fontsize=16)
 fig.tight_layout()
 dataset_nm.plot(ax=b, subplots=True, rot=20, legend=False, color='gray')
+dataset_nm_resample.plot(ax=b, subplots=True, rot=20, legend=False, color='black')
 b[0].set_ylabel('$I_{Obs}$', fontsize=10)
 b[1].set_ylabel('$I_{Obs}$', fontsize=10)
 b[2].set_ylabel('$I_{Obs}$', fontsize=10)
