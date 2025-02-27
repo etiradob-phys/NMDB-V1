@@ -62,9 +62,16 @@ def nmdb_get(startdate, enddate, station="JUNG"):
     return dfdict
 
 # --------------------------------------------------------------------------------------------------------------------------------------
+year_ti = input("Enter the initial year: ")
+month_ti = input("Enter the initial month (e.g., 01): ")
+day_ti = input("Enter the initial day: ")
 
-ti_nmdb = "2008-01-01"
-tf_nmdb = "2008-02-29"
+year_tf = input("Enter the final year: ")
+month_tf = input("Enter the final month (e.g., 01): ")
+day_tf = input("Enter the final day: ")
+
+ti_nmdb = f"{year_ti}-{month_ti}-{day_ti}"
+tf_nmdb = f"{year_tf}-{month_tf}-{day_tf}"
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 
