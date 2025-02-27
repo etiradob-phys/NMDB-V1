@@ -119,6 +119,44 @@ dataset_nm = pd.concat(dfs.values(), axis=1)
 print(dataset_nm)
 print('---------------------------------------------------------------')
 
+
+# --------------------------------------------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.rc('xtick', labelsize=15) 
+matplotlib.rc('ytick', labelsize=15)
+
+fig, b = plt.subplots(6, 1, sharex=True, figsize=(10,8), tight_layout=False)
+fig.suptitle('Neutron Monitor Data', fontsize=16)
+fig.tight_layout()
+dataset_nm.plot(ax=b, subplots=True, rot=20, legend=False, color='gray')
+b[0].set_ylabel('$I_{Obs}$', fontsize=10)
+b[1].set_ylabel('$I_{Obs}$', fontsize=10)
+b[2].set_ylabel('$I_{Obs}$', fontsize=10)
+b[3].set_ylabel('$I_{Obs}$', fontsize=10)
+b[4].set_ylabel('$I_{Obs}$', fontsize=10)
+b[5].set_ylabel('$I_{Obs}$', fontsize=10)
+
+b[0].legend(['McMurdo $R_{C}=0.30$ GV'], loc='lower left', fontsize=5)
+b[1].legend(['Thule $R_{C}=0.30$ GV'], loc='lower left', fontsize=5)
+b[2].legend(['Inuvik $R_{C}=0.30$ GV'], loc='lower left', fontsize=5)
+b[3].legend(['Nain $R_{C}=0.30$ GV'], loc='lower left', fontsize=5)
+b[4].legend(['Fort Smith $R_{C}=0.81$ GV'], loc='lower left', fontsize=5)
+b[5].legend(['Oulu $R_{C}=0.81$ GV'], loc='lower left', fontsize=5)
+
+b[0].axhline(y = 0.0, color = 'black', linestyle = '--', linewidth=0.5)
+b[1].axhline(y = 0.0, color = 'black', linestyle = '--', linewidth=0.5)
+b[2].axhline(y = 0.0, color = 'black', linestyle = '--', linewidth=0.5)
+b[3].axhline(y = 0.0, color = 'black', linestyle = '--', linewidth=0.5)
+b[4].axhline(y = 0.0, color = 'black', linestyle = '--', linewidth=0.5)
+b[5].axhline(y = 0.0, color = 'black', linestyle = '--', linewidth=0.5)
+
+plt.subplots_adjust(wspace=0, hspace=0)
+plt.show()
+
+# --------------------------------------------------------------------------------------------------------------------------------------
+
 # Extract various components of Datetime:
 
 dataset_nm_txt = dataset_nm
@@ -136,9 +174,6 @@ dataset_nm_txt.set_index('Datetime', inplace=True)
 print(dataset_nm_txt)
 
 dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008.txt', header=True, index=None, sep='\t', mode='w')
-
-# --------------------------------------------------------------------------------------------------------------------------------------
-import matplotlib.pyplot as plt
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
