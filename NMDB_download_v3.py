@@ -63,11 +63,11 @@ def nmdb_get(startdate, enddate, station="JUNG"):
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 year_ti = input("Enter the initial year: ")
-month_ti = input("Enter the initial month (e.g., 01): ")
+month_ti = input("Enter the initial month (e.g., JAN -> 01): ")
 day_ti = input("Enter the initial day: ")
-
+print('---------------------------------------------------------------')
 year_tf = input("Enter the final year: ")
-month_tf = input("Enter the final month (e.g., 01): ")
+month_tf = input("Enter the final month (e.g., JAN -> 01): ")
 day_tf = input("Enter the final day: ")
 
 ti_nmdb = f"{year_ti}-{month_ti}-{day_ti}"
@@ -196,7 +196,7 @@ dataset_nm_txt.set_index('Datetime', inplace=True)
 dataset_nm_resample_txt = dataset_nm_resample_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
 dataset_nm_resample_txt.set_index('Datetime', inplace=True)
 
-dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/{ti_nmdb}_{tf_nmdb}.txt', header=True, index=None, sep='\t', mode='w')
 dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008_resample.txt', header=True, index=None, sep='\t', mode='w')
 
 # --------------------------------------------------------------------------------------------------------------------------------------
