@@ -26,10 +26,7 @@ import urllib
 from bs4 import BeautifulSoup
 import numpy as np
 import math
-import matplotlib.pyplot as plt
-import matplotlib
 import scipy
-import smplotlib
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 
@@ -137,6 +134,8 @@ dataset_nm_txt['Second'] = dataset_nm_txt['Datetime'].dt.second
 dataset_nm_txt = dataset_nm_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
 dataset_nm_txt.set_index('Datetime', inplace=True)
 print(dataset_nm_txt)
+
+dataset_nm_resample_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008.txt', header=True, index=None, sep='\t', mode='w')
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
