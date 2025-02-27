@@ -110,8 +110,8 @@ for name, data in stations.items():
     df = df.replace('\n', '', regex=True)
     df[name] = df[name].astype(float)
     df.set_index('Datetime', inplace=True)
-#    dfs[name] = df - df[name].mean()
-    dfs[name] = df
+#    dfs[name] = ((df - df[name].mean())/(df[name].mean())) * 100
+#    dfs[name] = df
 
 # Concatenate all DataFrames along the columns
 dataset_nm = pd.concat(dfs.values(), axis=1)
