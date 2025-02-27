@@ -135,7 +135,7 @@ dataset_nm_txt = dataset_nm_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Mi
 dataset_nm_txt.set_index('Datetime', inplace=True)
 print(dataset_nm_txt)
 
-dataset_nm_resample_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_txt.to_csv(r'/Users/eduardotiradobueno/Downloads/JAN_FEB2008.txt', header=True, index=None, sep='\t', mode='w')
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
