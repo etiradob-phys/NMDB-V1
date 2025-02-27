@@ -120,8 +120,8 @@ for name, data in stations.items():
     df = df.replace('\n', '', regex=True)
     df[name] = df[name].astype(float)
     df.set_index('Datetime', inplace=True)
-    dfs[name] = ((df - df[name].mean())/(df[name].mean())) * 100
-#    dfs[name] = df
+#    dfs[name] = ((df - df[name].mean())/(df[name].mean())) * 100
+    dfs[name] = df
 
 # Concatenate all DataFrames along the columns
 dataset_nm = pd.concat(dfs.values(), axis=1)
@@ -200,7 +200,7 @@ dataset_nm_resample_txt = dataset_nm_resample_txt[['Datetime', 'Year', 'Month', 
 dataset_nm_resample_txt.set_index('Datetime', inplace=True)
 
 dataset_nm_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/{ti}to{tf}.txt', header=True, index=None, sep='\t', mode='w')
-dataset_nm_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/{ti}to{tf}_resample.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_resample_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/{ti}to{tf}_resample.txt', header=True, index=None, sep='\t', mode='w')
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------
