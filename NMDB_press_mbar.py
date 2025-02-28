@@ -144,7 +144,7 @@ dataset_nm_pressure_mbar_txt['Second'] = dataset_nm_pressure_mbar_txt['Datetime'
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 
-dataset_nm_pressure_mbar_txt = dataset_nm_uncorr_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
+dataset_nm_pressure_mbar_txt = dataset_nm_pressure_mbar_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
 dataset_nm_pressure_mbar_txt.set_index('Datetime', inplace=True)
 
 dataset_nm_pressure_mbar_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/pressure_mbar_{ti}to{tf}.txt', header=True, index=None, sep='\t', mode='w')
