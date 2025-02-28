@@ -147,4 +147,4 @@ dataset_nm_uncorr_txt['Second'] = dataset_nm_uncorr_txt['Datetime'].dt.second
 dataset_nm_uncorr_txt = dataset_nm_uncorr_txt[['Datetime', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'MCMU', 'THUL', 'INVK', 'NAIN', 'FSMT', 'OULU']]
 dataset_nm_uncorr_txt.set_index('Datetime', inplace=True)
 
-dataset_nm_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/uncorr_{ti}to{tf}.txt', header=True, index=None, sep='\t', mode='w')
+dataset_nm_uncorr_txt.to_csv(f'/Users/eduardotiradobueno/Downloads/uncorr_{ti}to{tf}.txt', header=True, index=None, sep='\t', mode='w')
