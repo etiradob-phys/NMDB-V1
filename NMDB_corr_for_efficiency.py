@@ -43,10 +43,10 @@ def nmdb_get(startdate, enddate, station="JUNG"):
     pre = pre[0].text
     pre = pre[pre.find('start_date_time'):]
     pre = pre.replace("start_date_time   1HCOR_E", "")
-    f = open("tmpV1_uncorr.txt", "w")
+    f = open("tmpV1_corr_for_efficiency.txt", "w")
     f.write(pre)
     f.close()
-    df = open("tmpV1_uncorr.txt", "r")
+    df = open("tmpV1_corr_for_efficiency.txt", "r")
     lines = df.readlines()
     df.close()
     lines = lines[1:]
